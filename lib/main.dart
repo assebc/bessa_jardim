@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:bessa_jardim/admin.dart';
+import 'package:bessa_jardim/contact.dart';
+import 'package:bessa_jardim/acc_creation.dart';
+import 'package:bessa_jardim/cronometer.dart';
+import 'package:bessa_jardim/funcs.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Bessa Jardins',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
