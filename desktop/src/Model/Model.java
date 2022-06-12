@@ -1,4 +1,4 @@
 package Model;
 
-import Work;
-import Funcionario;
+public class Model {
+}
