@@ -1,17 +1,17 @@
 package Model;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Funcionario{
 
+    private Integer id;
     private String name;
     private Double hours;
     private Double hours_left;
     private Integer price;
-    private Map<Integer,Cliente> clients;
-
+    private List<Integer> clients;
     private Integer num_works;
 
     // Constructors
@@ -21,12 +21,16 @@ public class Funcionario{
         this.hours = 0.0;
         this.hours_left = 0.0;
         this.price = price;
-        this.clients = new HashMap<>();
+        this.clients = new ArrayList<>();
         this.num_works = 0;
     }
 
     // Setters
 
+    public void setId(Integer id){
+        this.id = id;
+    }
+    
     public void setName(String name) {
         this.name = name;
     }
@@ -46,15 +50,22 @@ public class Funcionario{
         this.price = price;
     }
 
-    public void setClients(Map<Integer, Cliente> clients) {
+    public void setClients(List<Integer> clients) {
         this.clients = clients;
     }
 
     public void setClient(Cliente c){
         if(LocalDateTime.now().getDayOfMonth()==1){
             this.clients.clear();
-            this.clients.put(c.getId(),c);
-        } else if(!(this.clients.containsKey(c.getId()))) this.clients.put(c.getId(),c);
+            this.clients.add(c.getId());
+        } else if(!(this.clients.contains(c.getId()))) this.clients.add(c.getId());
+    }
+
+    public void setClient(Integer id){
+        if(LocalDateTime.now().getDayOfMonth()==1){
+            this.clients.clear();
+            this.clients.add(id);
+        } else if(!(this.clients.contains(id))) this.clients.add(id);
     }
 
     public void setNum_works(Integer num_works) {
@@ -69,6 +80,10 @@ public class Funcionario{
 
     // Getters
 
+    public Integer getId(){
+        return id;
+    }
+    
     public String getName() {
         return name;
     }
@@ -85,7 +100,7 @@ public class Funcionario{
         return price;
     }
 
-    public Map<Integer, Cliente> getClients() {
+    public List<Integer> getClients() {
         return clients;
     }
 
