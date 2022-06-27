@@ -1,2 +1,2 @@
 # bessa_jardim
-Android APP and IOS app for gardening management
+Android and IOS app for gardening management, recurring to an SGBD made in Java
