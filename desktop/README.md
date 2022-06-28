@@ -1,2 +1,2 @@
-API for Bessa Jardins for desktops only!
+API Bessa Jardins for desktops only!
 
