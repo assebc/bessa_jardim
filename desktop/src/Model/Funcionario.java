@@ -10,13 +10,13 @@ public class Funcionario{
     private String name;
     private Double hours;
     private Double hours_left;
-    private Integer price;
+    private Double price;
     private List<Integer> clients;
     private Integer num_works;
 
     // Constructors
 
-    public Funcionario(String name, int price) {
+    public Funcionario(String name, Double price) {
         this.name = name;
         this.hours = 0.0;
         this.hours_left = 0.0;
@@ -46,7 +46,7 @@ public class Funcionario{
         this.hours_left = hours_left;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -83,7 +83,7 @@ public class Funcionario{
     public Integer getId(){
         return id;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -96,7 +96,7 @@ public class Funcionario{
         return hours_left;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
