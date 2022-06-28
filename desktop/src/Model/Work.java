@@ -1,7 +1,5 @@
 package Model;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -57,5 +55,23 @@ public abstract class Work {
     public List<Integer> getId_Func(){return this.id_func;}
     public Double getHours(){return this.hours;}
     public Double getPrice(){return this.price;}
+
+    // Defaults
+    
+    @Override // remake
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+    
+    @Override // remake
+    public String toString() {
+        return super.toString();
+    }
+
+    // Queries
+
+    public Double payForWork(){
+        return getHours()*getPrice();
+    }
 
 }

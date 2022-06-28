@@ -78,21 +78,19 @@ public class Escarificador extends Work{
     }
 
     // Defaults
-
     
-    @Override
+    @Override // remake
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
 
-    @Override
+    @Override // remake
     public String toString() {
         return super.toString();
     }
 
     // Queries
     
-
     @Override
     public Double payForWork() {
         return super.payForWork();
