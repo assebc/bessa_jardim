@@ -11,10 +11,15 @@ public class Cliente {
 
     private String name;
 
+    private String morada;
+
+    private String cod_postal;
+
     private Map<Integer, List<Work>> trabalhos;
 
     // Constructors
-
+    
+    // TODO: falta construtores
 
     // Setters
 
@@ -26,6 +31,14 @@ public class Cliente {
         this.name = name;
     }
 
+    public void setMorada(String name){
+        this.morada = morada;
+    }
+
+    public void setCod_Postal(String asd){
+        this.cod_postal = asd;
+    }
+    
     public void setTrabalhos(Map<Integer, List<Work>> trabalhos) {
         this.trabalhos = trabalhos;
     }
@@ -53,6 +66,10 @@ public class Cliente {
         return name;
     }
 
+    public String getMorada(){ return morada; }
+
+    public String getCod_Postal(){ return cod_postal;}
+
     public Map<Integer, List<Work>> getTrabalhos() {
         return trabalhos;
     }
@@ -61,6 +78,8 @@ public class Cliente {
 
     public Double payment(){
         List<Work> works = getTrabalhos().values().stream().map(l->l.stream().iterator().next()).collect(Collectors.toList());
-        return 0.0;
+        double pay = 0.0;
+        for(Work w:works){pay+=w.payForWork();}
+        return pay;
     }
 }
